@@ -1,5 +1,5 @@
 <template>
-  <div class="modal" v-if="showBlock">
+  <div class="modal" v-if="showBlock" @click="stopTimer">
     <h1>Click to end game ...{{ delay }}</h1>
   </div>
 </template>
@@ -11,14 +11,28 @@ export default {
     data() {
         return {
             showBlock: false,
+            timeTaken: 0,
+            timer: null,
         }
     },
 
     mounted(){
         setTimeout(() => {
             this.showBlock = true;
+            this.startTimer();
         }, this.delay)
-    }
+    },
+    methods: {
+        startTimer(){
+            this.timer = setInterval(() => {
+                this.timeTaken += 10
+            },10)
+        },
+        stopTimer(){
+            clearInterval(this.timer)
+            this.$emit('end', this.timeTaken)
+        },
+    },
 
 }
 
