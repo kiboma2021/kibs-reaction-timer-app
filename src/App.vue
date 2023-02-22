@@ -1,10 +1,10 @@
 <template>
 <h1>{{ title }}</h1>
 <div>
-  <button>Play</button>
+  <button @click="startPlaying">Play</button>
 </div>
 
-<div>
+<div v-if="isPlaying">
   <Block>
     
   </Block>
@@ -23,6 +23,15 @@ export default {
     return {
       title: "Welcome to Kibs Reaction Response Game",
       isPlaying: false,
+      delay: null,
+    }
+  },
+  methods: {
+    startPlaying(){
+      this.delay = 2000 + Math.random() *5000
+      this.isPlaying = true
+
+      console.log(this.delay)
     }
   }
 }
