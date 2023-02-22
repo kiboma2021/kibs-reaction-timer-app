@@ -1,6 +1,6 @@
 <template>
   <div class="modal" v-if="showBlock" @click="stopTimer">
-    <h1>Click to end game ...{{ delay }}</h1>
+    <h1>Click to end game ...</h1>
   </div>
 </template>
 
