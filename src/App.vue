@@ -4,7 +4,11 @@
   <button>Play</button>
 </div>
 
-<Block />
+<div>
+  <Block>
+    
+  </Block>
+</div>
 
 </template>
 
@@ -18,6 +22,7 @@ export default {
   data() {
     return {
       title: "Welcome to Kibs Reaction Response Game",
+      isPlaying: false,
     }
   }
 }
