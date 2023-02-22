@@ -33,7 +33,8 @@ export default {
   methods: {
     startPlaying(){
       this.delay= 2000 + Math.random()*5000
-      this.isPlaying = true
+      this.isPlaying = true,
+      this.showTimeTaken = false
     },
     endGame(timeTaken){
       this.isPlaying = false,
