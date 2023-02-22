@@ -4,23 +4,23 @@
   <button @click="startPlaying" :disabled="isPlaying">Play</button>
 </div>
 
-<h1 v-if="showTimeTaken"> You took {{ this.score }} ms to complete the game</h1>
-
 <div v-if="isPlaying">
   <Block :delay="delay" @end="endGame">
     
   </Block>
 </div>
 
+<Result :score="score" v-if="showTimeTaken" />
+
 </template>
 
 <script>
 import Block from './components/Block.vue'
-
+import Result from './components/Result.vue'
 
 export default {
   name: 'App',
-  components: {Block},
+  components: {Block,Result},
   data() {
     return {
       title: "Welcome to Kibs Reaction Response Game",
