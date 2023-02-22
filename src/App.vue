@@ -1,5 +1,8 @@
 <template>
 <h1>{{ title }}</h1>
+<div>
+  <button>Play</button>
+</div>
 
 <Block />
 
@@ -28,5 +31,13 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+button {
+  background: greenyellow;
+  padding: 1rem;
+  font-weight: bold;
+  border: none;
+  width: 8rem;
+  border-radius: 10px;
 }
 </style>
