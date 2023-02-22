@@ -1,12 +1,22 @@
 <template>
+<h1>{{ title }}</h1>
+
+<Block />
 
 </template>
 
 <script>
+import Block from './components/Block.vue'
+
 
 export default {
   name: 'App',
-  components: {}
+  components: {Block},
+  data() {
+    return {
+      title: "Welcome to Kibs Reaction Response Game",
+    }
+  }
 }
 </script>
 
