@@ -1,14 +1,27 @@
 <template>
-  <div class="modal">
+  <div class="modal" v-if="showBlock">
     <h1>Click to end game ...{{ delay }}</h1>
   </div>
 </template>
 
 <script>
 export default {
-    props: ['delay']
+    props: ['delay'],
+
+    data() {
+        return {
+            showBlock: false,
+        }
+    },
+
+    mounted(){
+        setTimeout(() => {
+            this.showBlock = true;
+        }, this.delay)
+    }
 
 }
+
 </script>
 
 <style>
